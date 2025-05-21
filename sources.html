@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sources</title>
+    <style>
+        body {
+          font-family: 'Arial', sans-serif;
+          background-color: #fff8f0;
+          margin: 0;
+          padding: 20px;
+        }
+        header {
+          background-color: tomato;
+          color: white;
+          padding: 20px;
+          text-align: center;
+          font-size: 2em;
+          border-radius: 10px;
+        }
+        nav {
+          text-align: center;
+          margin: 20px 0;
+        }
+        nav a {
+          margin: 0 10px;
+          text-decoration: none;
+          color: tomato;
+          font-weight: bold;
+        }
+        section {
+          max-width: 800px;
+          margin: auto;
+          background-color: #fff;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+          color: #333;
+        }
+        ul {
+          padding-left: 20px;
+        }
+        li {
+          margin: 10px 0;
+        }
+      </style>
+</head>
+<body>
+    <header>
+        Sources
+      </header>
+      
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="recipes.html">Recipes</a>
+        <a href="tips.html">Tips</a>
+      </nav>
+      
+      <section>
+        <h2>Sources</h2>
+        <ul>
+        </ul>
+      </section>
+    <script src="script.js"></script>
+    <script>
+        const ul = document.querySelector("ul");
+        for(const recipe of recipes)
+        {
+            const li = document.createElement("li");
+            /* li.textContent = recipe.image; */
+            const a = document.createElement("a");
+            a.href = recipe.image;
+            a.textContent = recipe.image;
+            li.append(a);
+            ul.append(li);
+        }
+    </script>
+</body>
+</html>

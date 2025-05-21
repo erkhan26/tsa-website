@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Recipies</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #FF7B54;
+            --secondary-color: #FFB26B;
+            --light-color: #FFD56F;
+            --dark-color: #939B62;
+            --text-color: #333;
+            --light-text: #fff;
+            --bg-color: #f9f9f9;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fff8f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            background-color: tomato;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 2em;
+            border-radius: 10px;
+        }
+
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: tomato;
+            font-weight: bold;
+        }
+
+        section {
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        .recipe {
+            width: 65vw;
+            height: calc(100vh / 2);
+            padding: 0.5em;
+            margin: auto;
+        }
+
+        .recipeFix {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100%;
+            height: 100%;
+            box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+
+        }
+
+        .recipe .recipeImgC {
+            width: 50%;
+            height: 100%;
+            padding: 0.5em;
+        }
+
+        .recipe .recipeImgC img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .recipe .recipeInfo {
+            padding: 1em;
+            text-align: center;
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .recipe .recipeInfo .recipeName{
+            color: var(--dark-color);
+            font-weight: bold;
+            font-size: 2em;
+        }
+        .recipe .recipeInfo .recipeCategory{
+            color: #3333339c;
+            text-transform: capitalize;
+            font-size: 1.5em;
+        }
+        .recipe .recipeInfo .recipeTime{
+            color: #3333339c;
+            text-transform: capitalize;
+            font-size: 1em;
+        }
+        .recipe .recipeInfo .recipeIngredients{
+            display: flex;
+            flex-direction: column;
+            padding: 0.5em;
+            width: 50%;
+            text-transform: capitalize;
+            list-style: none;
+        }
+        .recipe .recipeInfo .recipeIngredients .ingredient::before{
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #FFB26B;
+        }
+        .recipe .recipeInfo .recipeIngredients .ingredient{
+            list-style: none;
+            position: relative;
+        }
+        .recipe .recipeInfo .recipeDescription{
+            padding: 0.5em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        Recipes
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="tips.html">Tips</a>
+        <a href="sources.html">Sources</a>
+    </nav>
+
+    <script src="script.js"></script>
+    <script>
+        for (const recipe of recipes) {
+            const div = document.createElement("div");
+            div.className = "recipe"
+
+            const fix = document.createElement("div");
+            fix.className = "recipeFix";
+            div.append(fix);
+
+            const recipeImgC = document.createElement("div");
+            recipeImgC.className = "recipeImgC";
+            fix.append(recipeImgC);
+
+            const recipeImg = document.createElement("img");
+            recipeImg.src = recipe.image;
+            recipeImgC.append(recipeImg);
+
+            const infoContainer = document.createElement("div");
+            infoContainer.className = "recipeInfo";
+            fix.append(infoContainer);
+
+            const name = document.createElement("span");
+            name.className = "recipeName";
+            name.textContent = recipe.name;
+            infoContainer.append(name);
+            
+            const category = document.createElement("span");
+            category.className = "recipeCategory";
+            category.textContent = recipe.category;
+            infoContainer.append(category);
+
+            const time = document.createElement("span");
+            time.className = "recipeTime";
+            time.textContent = `Ready in ${recipe.time} minutes`;
+            infoContainer.append(time);
+
+            const ingredients = document.createElement("ul");
+            ingredients.className = "recipeIngredients";
+            infoContainer.append(ingredients);
+
+            for(const ingredient of recipe.ingredients){
+                const ingredientEl = document.createElement("li");
+                ingredientEl.className = "ingredient";
+                ingredientEl.textContent = ingredient;
+                ingredients.append(ingredientEl);
+            }
+
+            const description = document.createElement("p");
+            description.className = "recipeDescription";
+            description.textContent = recipe.description;
+            infoContainer.append(description);
+
+            document.body.append(div);
+        }
+    </script>
+</body>
+
+</html>

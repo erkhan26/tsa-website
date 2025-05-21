@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width، initial-scale=1.0">
+    <title>Young Chef's Kitchen - Simple Recipes for Beginners</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Young Chef's Kitchen</h1>
+            <p>Simple recipes for beginner cooks!</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="recipes.html">All Recipes</a></li>
+                <li><a href="tips.html">Tips</a></li>
+                <li><a href="sources.html">Sources</a></li>
+                <li><a href="documentation.html">Documentation</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="home">
+            <h2>Welcome to Your Cooking Adventure!</h2>
+            <p>Learning to cook is fun and easy with our simple recipes designed just for students. Whether you're making breakfast before school or dinner for your family، we've got recipes that are quick، tasty، and easy to follow.</p>
+            
+            <div class="featured-recipes">
+                <div class="recipe-card">
+                    <img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Pancakes">
+                    <h3>Fluffy Pancakes</h3>
+                    <p>Ready in 20 minutes</p>
+                </div>
+                <div class="recipe-card">
+                    <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Pasta">
+                    <h3>Easy Garlic Pasta</h3>
+                    <p>Ready in 15 minutes</p>
+                </div>
+                <div class="recipe-card">
+                    <img src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Quesadilla">
+                    <h3>Cheesy Quesadilla</h3>
+                    <p>Ready in 10 minutes</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="find-recipe">
+            <h2>Find Your Perfect Recipe</h2>
+            <p>Answer a few questions and we'll suggest recipes based on what you have and how much time you have!</p>
+            
+            <div class="recipe-finder">
+                <div id="finder-step-1" class="finder-step active">
+                    <h3>What meal are you making?</h3>
+                    <div class="options">
+                        <button data-value="breakfast">Breakfast</button>
+                        <button data-value="lunch">Lunch</button>
+                        <button data-value="dinner">Dinner</button>
+                        <button data-value="snack">Snack</button>
+                    </div>
+                </div>
+                
+                <div id="finder-step-2" class="finder-step">
+                    <h3>How much time do you have?</h3>
+                    <div class="options">
+                        <button data-value="10">Under 10 mins</button>
+                        <button data-value="20">10-20 mins</button>
+                        <button data-value="30">20-30 mins</button>
+                        <button data-value="60">30+ mins</button>
+                    </div>
+                </div>
+                
+                <div id="finder-step-3" class="finder-step">
+                    <h3>What ingredients do you have? （Select all that apply）</h3>
+                    <div class="options checkbox-options">
+                        <label><input type="checkbox" name="ingredients" value="eggs"> Eggs</label>
+                        <label><input type="checkbox" name="ingredients" value="bread"> Bread</label>
+                        <label><input type="checkbox" name="ingredients" value="cheese"> Cheese</label>
+                        <label><input type="checkbox" name="ingredients" value="pasta"> Pasta</label>
+                        <label><input type="checkbox" name="ingredients" value="rice"> Rice</label>
+                        <label><input type="checkbox" name="ingredients" value="chicken"> Chicken</label>
+                        <label><input type="checkbox" name="ingredients" value="vegetables"> Vegetables</label>
+                        <label><input type="checkbox" name="ingredients" value="fruit"> Fruit</label>
+                    </div>
+                    <button id="find-recipe-btn" class="primary-btn">Find My Recipe!</button>
+                </div>
+                
+                <div id="recipe-results" class="finder-step">
+                    <h3>We found these recipes for you!</h3>
+                    <div id="matched-recipes" class="recipe-results-container"></div>
+                    <button id="start-over-btn" class="secondary-btn">Start Over</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="recipes">
+            <h2>All Recipes</h2>
+            <div class="filter-options">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="breakfast">Breakfast</button>
+                <button class="filter-btn" data-filter="lunch">Lunch</button>
+                <button class="filter-btn" data-filter="dinner">Dinner</button>
+                <button class="filter-btn" data-filter="snack">Snacks</button>
+            </div>
+            
+            <div class="recipes-grid">
+                <!-- Recipes will be populated by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Young Chef's Kitchen - Designed for student cooks</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <section id="lunch-ingredients">
+        <h2>Lunch Essentials</h2>
+        <p>Everything you need to make quick, packable lunches for school or home!</p>
+        
+        <div class="lunch-categories">
+            <!-- Sandwich Station -->
+            <div class="lunch-category sandwich">
+                <h3><span class="emoji">🥪</span> Sandwich Station</h3>
+                <div class="ingredient-group">
+                    <h4>Breads:</h4>
+                    <ul>
+                        <li>Whole wheat bread</li>
+                        <li>Pita pockets</li>
+                        <li>Tortillas (for wraps)</li>
+                        <li>Bagels</li>
+                        <li>English muffins</li>
+                    </ul>
+                </div>
+                <div class="ingredient-group">
+                    <h4>Proteins:</h4>
+                    <ul>
+                        <li>Deli meats (turkey, ham)</li>
+                        <li>Canned tuna/chicken</li>
+                        <li>Hard boiled eggs</li>
+                        <li>Peanut butter</li>
+                        <li>Hummus</li>
+                    </ul>
+                </div>
+                <div class="ingredient-group">
+                    <h4>Veggies:</h4>
+                    <ul>
+                        <li>Lettuce/spinach</li>
+                        <li>Tomato slices</li>
+                        <li>Cucumber</li>
+                        <li>Bell pepper strips</li>
+                        <li>Shredded carrots</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Salad Bar -->
+            <div class="lunch-category salad">
+                <h3><span class="emoji">🥗</span> Salad Bar</h3>
+                <div class="ingredient-group">
+                    <h4>Greens:</h4>
+                    <ul>
+                        <li>Mixed salad greens</li>
+                        <li>Spinach</li>
+                        <li>Kale</li>
+                        <li>Shredded cabbage</li>
+                    </ul>
+                </div>
+                <div class="ingredient-group">
+                    <h4>Toppings:</h4>
+                    <ul>
+                        <li>Cherry tomatoes</li>
+                        <li>Cucumber slices</li>
+                        <li>Croutons</li>
+                        <li>Cheese cubes</li>
+                        <li>Sunflower seeds</li>
+                    </ul>
+                </div>
+                <div class="ingredient-group">
+                    <h4>Dressings:</h4>
+                    <ul>
+                        <li>Ranch</li>
+                        <li>Italian</li>
+                        <li>Balsamic vinaigrette</li>
+                        <li>Olive oil & lemon</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Hot Lunch -->
+            <div class="lunch-category hot">
+                <h3><span class="emoji">🍲</span> Hot Lunch</h3>
+                <div class="ingredient-group">
+                    <h4>Quick Cook:</h4>
+                    <ul>
+                        <li>Instant noodles/ramen</li>
+                        <li>Frozen dumplings</li>
+                        <li>Microwave rice packets</li>
+                        <li>Canned soups</li>
+                    </ul>
+                </div>
+                <div class="ingredient-group">
+                    <h4>Leftovers:</h4>
+                    <ul>
+                        <li>Cooked pasta</li>
+                        <li>Grilled chicken</li>
+                        <li>Steamed vegetables</li>
+                        <li>Stir-fry mixtures</li>
+                    </ul>
+                </div>
+                <div class="ingredient-group">
+                    <h4>Extras:</h4>
+                    <ul>
+                        <li>Shredded cheese</li>
+                        <li>Hot sauce</li>
+                        <li>Soy sauce packets</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="lunch-tips">
+            <h3>Lunch Prep Tips</h3>
+            <div class="tips-container">
+                <div class="tip">
+                    <h4><span class="emoji">⏱️</span> Time Savers</h4>
+                    <ul>
+                        <li>Prep sandwich veggies Sunday night</li>
+                        <li>Hard boil a dozen eggs for the week</li>
+                        <li>Use divided containers for easy packing</li>
+                    </ul>
+                </div>
+                <div class="tip">
+                    <h4><span class="emoji">💰</span> Budget Tips</h4>
+                    <ul>
+                        <li>Buy deli meat in larger packages</li>
+                        <li>Make your own trail mix</li>
+                        <li>Grow your own sprouts</li>
+                    </ul>
+                </div>
+                <div class="tip">
+                    <h4><span class="emoji">📦</span> Packing Hacks</h4>
+                    <ul>
+                        <li>Pack dressings separately</li>
+                        <li>Use frozen juice boxes as ice packs</li>
+                        <li>Wrap sandwiches in parchment paper</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="lunch-gear">
+            <h3>Helpful Lunch Gear</h3>
+            <ul>
+                <li>Insulated lunch bag</li>
+                <li>Reusable ice packs</li>
+                <li>Thermos for hot foods</li>
+                <li>Small condiment containers</li>
+                <li>Bento-style boxes</li>
+            </ul>
+        </div>
+    </section>
+    <section id="dinner-ingredients">
+        <h2>Dinner Essentials</h2>
+        <p>Stock up on these ingredients to make simple, satisfying dinners any night of the week!</p>
+        
+        <div class="dinner-categories">
+            <!-- Quick & Easy Dinners -->
+            <div class="dinner-category quick">
+                <h3><span class="emoji">⚡</span> Quick & Easy</h3>
+                <div class="ingredient-group">
+                    <h4>15-Minute Meals:</h4>
+                    <ul>
+                        <li>Pasta + jarred marinara</li>
+                        <li>Instant rice + canned beans</li>
+                        <li>Frozen stir-fry vegetables</li>
+                        <li>Pre-cooked grilled chicken</li>
+                        <li>Tortillas + shredded cheese</li>
+                    </ul>
+                </div>
+                <div class="ingredient-group">
+                    <h4>Pantry Shortcuts:</h4>
+                    <ul>
+                        <li>Canned soups/stews</li>
+                        <li>Boxed mac & cheese</li>
+                        <li>Ramen noodles (dress up!)</li>
+                        <li>Pre-made pizza dough</li>
+                        <li>Frozen meatballs</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Protein Staples -->
+            <div class="dinner-category proteins">
+                <h3><span class="emoji">🍗</span> Protein Staples</h3>
+                <div class="ingredient-group">
+                    <h4>Meats:</h4>
+                    <ul>
+                        <li>Chicken breasts/thighs</li>
+                        <li>Ground beef/turkey</li>
+                        <li>Pork chops</li>
+                        <li>Bacon (for flavoring)</li>
+                        <li>Frozen fish fillets</li>
+                    </ul>
+                </div>
+                <div class="ingredient-group">
+                    <h4>Vegetarian Options:</h4>
+                    <ul>
+                        <li>Canned beans (black, kidney)</li>
+                        <li>Lentils</li>
+                        <li>Tofu</li>
+                        <li>Eggs</li>
+                        <li>Greek yogurt (for sauces)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Flavor Boosters -->
+            <div class="dinner-category flavors">
+                <h3><span class="emoji">🧂</span> Flavor Boosters</h3>
+                <div class="ingredient-group">
+                    <h4>Spices & Herbs:</h4>
+                    <ul>
+                        <li>Salt + pepper</li>
+                        <li>Garlic powder</li>
+                        <li>Italian seasoning</li>
+                        <li>Chili powder</li>
+                        <li>Dried basil/oregano</li>
+                    </ul>
+                </div>
+                <div class="ingredient-group">
+                    <h4>Sauces & Condiments:</h4>
+                    <ul>
+                        <li>Soy sauce</li>
+                        <li>Hot sauce</li>
+                        <li>BBQ sauce</li>
+                        <li>Olive oil</li>
+                        <li>Vinegar (balsamic, apple cider)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="dinner-tips">
+            <h3>Dinner Hacks for Students</h3>
+            <div class="tips-container">
+                <div class="tip">
+                    <h4><span class="emoji">⏰</span> Time Savers</h4>
+                    <ul>
+                        <li>Cook double portions for leftovers</li>
+                        <li>Use frozen pre-chopped vegetables</li>
+                        <li>Microwave baked potatoes in 5 mins</li>
+                    </ul>
+                </div>
+                <div class="tip">
+                    <h4><span class="emoji">💰</span> Budget Tips</h4>
+                    <ul>
+                        <li>Buy whole chickens (cheaper per pound)</li>
+                        <li>Use eggs as affordable protein</li>
+                        <li>Make your own spice mixes</li>
+                    </ul>
+                </div>
+                <div class="tip">
+                    <h4><span class="emoji">🍽️</span> Presentation</h4>
+                    <ul>
+                        <li>Garnish with fresh herbs</li>
+                        <li>Use colorful vegetables</li>
+                        <li>Serve on warm plates</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="dinner-gear">
+            <h3>Essential Dinner Tools</h3>
+            <div class="gear-grid">
+                <div class="gear-item">
+                    <h4><span class="emoji">🍳</span> Cookware</h4>
+                    <ul>
+                        <li>Large skillet</li>
+                        <li>Medium saucepan</li>
+                        <li>Baking sheet</li>
+                        <li>Casserole dish</li>
+                    </ul>
+                </div>
+                <div class="gear-item">
+                    <h4><span class="emoji">🔪</span> Utensils</h4>
+                    <ul>
+                        <li>Chef's knife</li>
+                        <li>Wooden spoon</li>
+                        <li>Spatula</li>
+                        <li>Tongs</li>
+                    </ul>
+                </div>
+                <div class="gear-item">
+                    <h4><span class="emoji">🥄</span> Prep Tools</h4>
+                    <ul>
+                        <li>Cutting board</li>
+                        <li>Measuring cups/spoons</li>
+                        <li>Vegetable peeler</li>
+                        <li>Can opener</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="dinner-planner">
+            <h3>Simple Dinner Formula</h3>
+            <div class="formula-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <p>Choose a protein (chicken, beans, eggs)</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <p>Add a carb (rice, pasta, potatoes)</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <p>Include vegetables (fresh, frozen, or canned)</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <p>Finish with flavor (sauce, spices, cheese)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="dinner-ingredients" class="parallax-section" style="background-image: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+        <div class="overlay"></div>
+        <div class="content-wrapper">
+            <h2>Dinner Essentials</h2>
+            <p class="subtitle">Stock up on these ingredients to make simple, satisfying dinners any night of the week!</p>
+            
+            <div class="dinner-cards-container">
+                <!-- Quick & Easy Dinners Card -->
+                <div class="dinner-card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1551183053-bf91a1d81141?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
+                    <div class="card-content">
+                        <h3><span class="emoji">⚡</span> Quick & Easy</h3>
+                        <div class="ingredient-group">
+                            <h4>15-Minute Meals:</h4>
+                            <ul>
+                                <li>Pasta + jarred marinara</li>
+                                <li>Instant rice + canned beans</li>
+                                <li>Frozen stir-fry vegetables</li>
+                            </ul>
+                        </div>
+                        <div class="ingredient-group">
+                            <h4>Pantry Shortcuts:</h4>
+                            <ul>
+                                <li>Canned soups/stews</li>
+                                <li>Boxed mac & cheese</li>
+                                <li>Pre-made pizza dough</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Protein Staples Card -->
+                <div class="dinner-card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
+                    <div class="card-content">
+                        <h3><span class="emoji">🍗</span> Protein Staples</h3>
+                        <div class="ingredient-group">
+                            <h4>Meats:</h4>
+                            <ul>
+                                <li>Chicken breasts/thighs</li>
+                                <li>Ground beef/turkey</li>
+                                <li>Frozen fish fillets</li>
+                            </ul>
+                        </div>
+                        <div class="ingredient-group">
+                            <h4>Vegetarian:</h4>
+                            <ul>
+                                <li>Canned beans</li>
+                                <li>Lentils</li>
+                                <li>Tofu</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Flavor Boosters Card -->
+                <div class="dinner-card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80');"></div>
+                    <div class="card-content">
+                        <h3><span class="emoji">🧂</span> Flavor Boosters</h3>
+                        <div class="ingredient-group">
+                            <h4>Spices & Herbs:</h4>
+                            <ul>
+                                <li>Salt + pepper</li>
+                                <li>Garlic powder</li>
+                                <li>Italian seasoning</li>
+                            </ul>
+                        </div>
+                        <div class="ingredient-group">
+                            <h4>Sauces & Condiments:</h4>
+                            <ul>
+                                <li>Soy sauce</li>
+                                <li>Hot sauce</li>
+                                <li>Olive oil</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional content remains the same -->
+        </div>
+    </section>
+    <div class="detailed-recipe">
+        <div class="recipe-hero">
+            <img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Fluffy Pancakes">
+            <div class="recipe-info">
+                <h3>Fluffy Pancakes</h3>
+                <div class="meta-info">
+                    <span>⏱️ 20 mins</span>
+                    <span>🍽️ 2 servings</span>
+                    <span>🔥 350 cal/serving</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="recipe-details">
+            <div class="ingredients">
+                <h4>Ingredients</h4>
+                <ul>
+                    <li><input type="checkbox"> 1 cup all-purpose flour</li>
+                    <li><input type="checkbox"> 2 tbsp sugar</li>
+                    <li><input type="checkbox"> 2 tsp baking powder</li>
+                    <li><input type="checkbox"> 1/2 tsp salt</li>
+                    <li><input type="checkbox"> 1 cup milk</li>
+                    <li><input type="checkbox"> 1 egg</li>
+                    <li><input type="checkbox"> 2 tbsp melted butter</li>
+                </ul>
+            </div>
+            
+            <div class="steps">
+                <h4>Steps</h4>
+                <ol>
+                    <li>Mix dry ingredients in bowl</li>
+                    <li>Whisk wet ingredients separately</li>
+                    <li>Combine until just mixed (lumps are okay!)</li>
+                    <li>Heat pan over medium heat</li>
+                    <li>Pour 1/4 cup batter per pancake</li>
+                    <li>Flip when bubbles form (about 2-3 mins)</li>
+                    <li>Cook other side until golden</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <section id="meal-planner">
+        <h2>Weekly Meal Planner</h2>
+        <div class="calendar">
+            <div class="week-header">
+                <div>Monday</div>
+                <div>Tuesday</div>
+                <div>Wednesday</div>
+                <div>Thursday</div>
+                <div>Friday</div>
+                <div>Saturday</div>
+                <div>Sunday</div>
+            </div>
+            <div class="week-grid">
+                <div class="day" data-day="monday"><div class="add-meal">+ Add Meal</div></div>
+                <div class="day" data-day="tuesday"><div class="add-meal">+ Add Meal</div></div>
+                <div class="day" data-day="wednesday"><div class="add-meal">+ Add Meal</div></div>
+                <div class="day" data-day="thursday"><div class="add-meal">+ Add Meal</div></div>
+                <div class="day" data-day="friday"><div class="add-meal">+ Add Meal</div></div>
+                <div class="day" data-day="saturday"><div class="add-meal">+ Add Meal</div></div>
+                <div class="day" data-day="sunday"><div class="add-meal">+ Add Meal</div></div>
+            </div>
+        </div>
+        <div class="meal-options hidden">
+            <h4>Select Meal Type</h4>
+            <select id="meal-type">
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+                <option value="snack">Snack</option>
+            </select>
+            <button id="save-meal" class="primary-btn">Save</button>
+            <button id="cancel-meal" class="secondary-btn">Cancel</button>
+        </div>
+    </section>
+    <section id="shopping-list">
+        <h2>Shopping List Generator</h2>
+        <div class="shopping-list-container">
+            <div class="list-creation">
+                <input type="text" id="new-item" placeholder="Add an item...">
+                <button id="add-item" class="primary-btn">Add</button>
+                <select id="item-category">
+                    <option value="produce">Produce</option>
+                    <option value="dairy">Dairy</option>
+                    <option value="meat">Meat</option>
+                    <option value="pantry">Pantry</option>
+                    <option value="frozen">Frozen</option>
+                </select>
+            </div>
+            
+            <div class="list-display">
+                <div class="category" data-category="produce">
+                    <h3>Produce</h3>
+                    <ul></ul>
+                </div>
+                <div class="category" data-category="dairy">
+                    <h3>Dairy</h3>
+                    <ul></ul>
+                </div>
+                <div class="category" data-category="meat">
+                    <h3>Meat</h3>
+                    <ul></ul>
+                </div>
+                <div class="category" data-category="pantry">
+                    <h3>Pantry</h3>
+                    <ul></ul>
+                </div>
+                <div class="category" data-category="frozen">
+                    <h3>Frozen</h3>
+                    <ul></ul>
+                </div>
+            </div>
+            
+            <button id="print-list" class="secondary-btn">Print List</button>
+        </div>
+    </section>
+    <section id="video-tutorials">
+        <h2>Cooking Video Tutorials</h2>
+        <div class="video-grid">
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/FLd00Bx4tOk" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <h3>5 Easy Breakfasts</h3>
+                <p>Learn quick breakfast recipes perfect for school mornings</p>
+            </div>
+            
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/FLd00Bx4tOk" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <h3>Pasta 101</h3>
+                <p>Master the basics of cooking perfect pasta</p>
+            </div>
+            
+            <div class="video-card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/FLd00Bx4tOk" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <h3>Knife Skills</h3>
+                <p>Essential knife techniques for beginners</p>
+            </div>
+        </div>
+        
+        <div class="video-categories">
+            <button class="category-btn active">All Videos</button>
+            <button class="category-btn">Breakfast</button>
+            <button class="category-btn">Lunch</button>
+            <button class="category-btn">Dinner</button>
+            <button class="category-btn">Techniques</button>
+        </div>
+    </section>
+</body>
+</html>
